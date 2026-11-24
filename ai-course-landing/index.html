@@ -95,11 +95,13 @@
   .nav a:hover::after{width:100%}
   .nav-cta{display:none}
   .header-cta{padding:11px 21px;font-size:13px;flex:none}
-  .nav-toggle{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line-soft);background:transparent;cursor:pointer;place-items:center;padding:0}
-  .nav-toggle span{display:block;width:18px;height:1.5px;background:var(--text);margin:3px auto;transition:transform .25s,opacity .25s}
-  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(4.5px) rotate(45deg)}
+  .nav-toggle{display:none;position:relative;width:42px;height:42px;border-radius:10px;border:1px solid var(--line-soft);background:transparent;cursor:pointer;padding:0}
+  .nav-toggle span{position:absolute;left:50%;top:50%;width:18px;height:1.5px;background:var(--text);border-radius:2px;transform:translate(-50%,-50%) translateY(-6px);transition:transform .25s ease,opacity .2s ease}
+  .nav-toggle span:nth-child(2){transform:translate(-50%,-50%);opacity:1}
+  .nav-toggle span:nth-child(3){transform:translate(-50%,-50%) translateY(6px)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translate(-50%,-50%) rotate(45deg)}
   .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
-  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-4.5px) rotate(-45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translate(-50%,-50%) rotate(-45deg)}
 
   /* ============ hero ============ */
   .hero{position:relative;overflow:hidden;padding:clamp(104px,12vw,152px) 0 clamp(56px,7vw,92px)}
@@ -401,7 +403,7 @@
     .nav a:hover{background:rgba(212,175,55,.08)}
     .nav a::after{display:none}
     .nav-cta{display:inline-flex !important;justify-content:center;margin-top:8px;padding:13px 14px;border-radius:10px;background:linear-gradient(135deg,#F0DA93,#D4AF37 60%,#B8912A);color:#1a1500 !important;font-weight:700}
-    .nav-toggle{display:grid}
+    .nav-toggle{display:block}
     .header-cta{display:none}
     .hero{padding-top:104px}
     .hero-stats{gap:20px;flex-wrap:wrap}
